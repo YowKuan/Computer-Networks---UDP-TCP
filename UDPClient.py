@@ -17,6 +17,8 @@ while True:
         if question == 'Green Pass!' or question == 'Red Pass!':
             break
         answer = input(question + '\nResponse:')
+        if answer == '':
+            answer = '.'
         #Because we're using UDP, so everytime we send a message, we need to specify serverName and serverPort
         clientSocket.sendto(answer.encode(), (serverName, serverPort))
     #print out the result

@@ -12,6 +12,8 @@ while True:
     if question == 'Green Pass!' or question == 'Red Pass!':
         break
     answer = input(question + '\nResponse:')
+    if answer == '':
+        answer = '.'
     #No specification on serverName and Server port because the server has already provided dedicated connetionSocket to receive message.
     clientSocket.send(answer.encode())
 print(question)
